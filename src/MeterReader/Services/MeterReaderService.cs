@@ -4,12 +4,12 @@ using static MeterReader.gRPC.MeterReadingService;
 
 namespace MeterReader.Services
 {
-    public class MeterReaderService : MeterReadingServiceBase
+    public class MeterReadingService : MeterReadingServiceBase
     {
         private readonly IReadingRepository _repository;
-        private readonly ILogger<MeterReaderService> _logger;
+        private readonly ILogger<MeterReadingService> _logger;
 
-        public MeterReaderService(IReadingRepository repository,ILogger<MeterReaderService> logger)
+        public MeterReadingService(IReadingRepository repository,ILogger<MeterReadingService> logger)
         {
             _repository = repository;
             _logger = logger;

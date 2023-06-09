@@ -24,7 +24,7 @@
               >
               <td>&nbsp;</td>
                 <td>
-                  <small>&nbsp;&nbsp;{{ date(r.readingDate, "hh:mm a") }}</small>
+                  <small>&nbsp;&nbsp;{{ date(r.readingDate, "d/M/yyyy hh:mm a") }}</small>
                 </td>
                 <td><em>{{ r.value }}</em></td>
               </tr>

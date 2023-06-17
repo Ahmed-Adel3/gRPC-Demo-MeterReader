@@ -26,12 +26,13 @@ namespace MeterReader.Services
                         Value = item.ReadingValue,
                         ReadingDate = item.ReadingTime.ToDateTime(),
                     };
-
+                    _logger.LogInformation($"Adding {readingValue.Value}");
                     _repository.AddEntity(readingValue);
                 }
 
                 if(await _repository.SaveAllAsync())
                 {
+                    _logger.LogInformation("Successfully saved new reading");
                     return new StatusMessage()
                     {
                         Notes = "Successfully added to database",
@@ -40,6 +41,7 @@ namespace MeterReader.Services
                 }
                 else
                 {
+                    _logger.LogError("Failed to save new reading");
                     return new StatusMessage()
                     {
                         Notes = "Failed to add to database",
